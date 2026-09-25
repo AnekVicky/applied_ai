@@ -1,0 +1,304 @@
+{
+  "support_tickets": [
+    {
+      "id": "TCK-001",
+      "title": "Refund policy for Enterprise cancellations",
+      "content": "Enterprise plan customers who cancel within 30 days of their renewal date are eligible for a full refund. Cancellations after 30 days receive a prorated refund for unused months.",
+      "category": "billing",
+      "metadata": {
+        "product_area": "billing",
+        "priority": "high"
+      }
+    },
+    {
+      "id": "TCK-002",
+      "title": "Resetting a forgotten password",
+      "content": "Users can reset their password by clicking 'Forgot Password' on the login screen. A reset link is sent to the registered email and expires in 15 minutes.",
+      "category": "login",
+      "metadata": {
+        "product_area": "authentication",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-003",
+      "title": "API rate limit exceeded error (429)",
+      "content": "The Dandes Cloud API allows 100 requests per minute on the Standard plan and 1000 requests per minute on the Enterprise plan. Exceeding this returns a 429 error. Implement exponential backoff to handle this.",
+      "category": "api",
+      "metadata": {
+        "product_area": "developer_platform",
+        "priority": "high"
+      }
+    },
+    {
+      "id": "TCK-004",
+      "title": "Downgrading between Enterprise, Pro, and Free plans",
+      "content": "Customers downgrading from the Enterprise plan to the Pro plan will have the downgrade take effect at the start of the next billing cycle. Enterprise-only features such as SSO and audit logs are disabled immediately upon downgrade confirmation, even before the billing cycle changes. This Enterprise-to-Pro downgrade policy applies specifically to that transition. Separately, downgrades from the Pro plan to the Free plan follow the same next-billing-cycle timing, but do not involve losing Enterprise-only features, since the Pro plan never included them in the first place.",
+      "category": "billing",
+      "metadata": {
+        "product_area": "billing",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-005",
+      "title": "Two-Factor Authentication (2FA) setup",
+      "content": "2FA can be enabled under Account Settings > Security. Supported methods are Authenticator App (TOTP) and SMS. SMS 2FA is not available on the Free plan.",
+      "category": "security",
+      "metadata": {
+        "product_area": "authentication",
+        "priority": "low"
+      }
+    },
+    {
+      "id": "TCK-006",
+      "title": "API key rotation best practices",
+      "content": "Enterprise customers can generate up to 5 active API keys simultaneously. We recommend rotating keys every 90 days and revoking unused keys from the Developer Dashboard immediately.",
+      "category": "api",
+      "metadata": {
+        "product_area": "developer_platform",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-007",
+      "title": "Adding team members to an Enterprise account",
+      "content": "Enterprise admins can invite unlimited team members under Team Settings > Invite Members. Invited users receive an email and must accept within 7 days.",
+      "category": "account",
+      "metadata": {
+        "product_area": "account_management",
+        "priority": "low"
+      }
+    },
+    {
+      "id": "TCK-008",
+      "title": "Data export and account deletion",
+      "content": "Users can request a full data export via Settings > Privacy > Export My Data. Processing takes up to 48 hours. Account deletion is permanent after a 14-day grace period.",
+      "category": "account",
+      "metadata": {
+        "product_area": "account_management",
+        "priority": "high"
+      }
+    },
+    {
+      "id": "TCK-009",
+      "title": "Single Sign-On (SSO) configuration for Enterprise",
+      "content": "Enterprise accounts support SSO via SAML 2.0 and OpenID Connect. Admins configure the Identity Provider under Settings > Security > SSO Configuration. Changes can take up to 15 minutes to propagate.",
+      "category": "security",
+      "metadata": {
+        "product_area": "authentication",
+        "priority": "high"
+      }
+    },
+    {
+      "id": "TCK-010",
+      "title": "IP allowlisting for Enterprise accounts",
+      "content": "Enterprise admins can restrict account access to specific IP ranges under Settings > Security > IP Allowlist. Requests from non-allowlisted IPs are blocked with a 403 error.",
+      "category": "security",
+      "metadata": {
+        "product_area": "authentication",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-011",
+      "title": "Webhook delivery failures and retries",
+      "content": "Webhooks are retried up to 5 times with exponential backoff if the endpoint returns a non-2xx status. After 5 failed attempts, the webhook is marked as failed and appears in the Developer Dashboard logs.",
+      "category": "api",
+      "metadata": {
+        "product_area": "developer_platform",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-012",
+      "title": "Slow dashboard load times",
+      "content": "Dashboard load times above 3 seconds are typically caused by large datasets in custom reports. Enabling 'Lite Mode' under Settings > Performance reduces load time by limiting default report ranges to 30 days.",
+      "category": "performance",
+      "metadata": {
+        "product_area": "web_app",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-013",
+      "title": "File upload size limits",
+      "content": "The maximum file upload size is 25 MB on the Standard plan and 250 MB on the Enterprise plan. Files exceeding this limit return a 413 Payload Too Large error.",
+      "category": "performance",
+      "metadata": {
+        "product_area": "web_app",
+        "priority": "low"
+      }
+    },
+    {
+      "id": "TCK-014",
+      "title": "Onboarding checklist for new Enterprise admins",
+      "content": "New Enterprise admins should complete the onboarding checklist: verify domain ownership, configure SSO, invite team members, and set up billing contacts. This is available under Home > Getting Started.",
+      "category": "onboarding",
+      "metadata": {
+        "product_area": "account_management",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-015",
+      "title": "Migrating data from a legacy system",
+      "content": "Enterprise customers can request a guided migration via the Customer Success team. Standard migrations complete within 5 business days and support CSV, JSON, and direct database imports.",
+      "category": "onboarding",
+      "metadata": {
+        "product_area": "account_management",
+        "priority": "high"
+      }
+    },
+    {
+      "id": "TCK-016",
+      "title": "Understanding invoice line items",
+      "content": "Enterprise invoices break down charges by seat licenses, API usage overage, and add-on modules. Detailed line-item invoices are available under Billing > Invoice History as downloadable PDFs.",
+      "category": "billing",
+      "metadata": {
+        "product_area": "billing",
+        "priority": "low"
+      }
+    },
+    {
+      "id": "TCK-017",
+      "title": "Setting up custom user roles and permissions",
+      "content": "Enterprise admins can create custom roles under Team Settings > Roles & Permissions. Each role can be granted granular access to modules such as Billing, API Keys, and Reports.",
+      "category": "account",
+      "metadata": {
+        "product_area": "account_management",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-018",
+      "title": "OAuth token expiration and refresh",
+      "content": "Access tokens expire after 60 minutes. Use the refresh_token grant type to obtain a new access token without requiring the user to log in again. Refresh tokens are valid for 30 days.",
+      "category": "api",
+      "metadata": {
+        "product_area": "developer_platform",
+        "priority": "high"
+      }
+    },
+    {
+      "id": "TCK-019",
+      "title": "Login failures after password reset",
+      "content": "If login fails immediately after a password reset, ensure cached sessions are cleared. Active sessions on other devices are automatically logged out within 5 minutes of a password change.",
+      "category": "login",
+      "metadata": {
+        "product_area": "authentication",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-020",
+      "title": "Audit log retention policy",
+      "content": "Enterprise accounts retain audit logs for 12 months by default. Extended retention up to 7 years is available as a compliance add-on for regulated industries.",
+      "category": "security",
+      "metadata": {
+        "product_area": "compliance",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-021",
+      "title": "Suspicious login alerts",
+      "content": "Login attempts from a new device or location trigger an email alert to the account owner. Enterprise admins can enable mandatory step-up verification for all flagged logins under Settings > Security.",
+      "category": "security",
+      "metadata": {
+        "product_area": "authentication",
+        "priority": "high"
+      }
+    },
+    {
+      "id": "TCK-022",
+      "title": "API sandbox environment for testing",
+      "content": "Enterprise developers get access to a free sandbox environment with synthetic data. Sandbox API keys are prefixed with sk_test_ and never incur usage charges.",
+      "category": "api",
+      "metadata": {
+        "product_area": "developer_platform",
+        "priority": "low"
+      }
+    },
+    {
+      "id": "TCK-023",
+      "title": "Timeout errors on large report generation",
+      "content": "Reports covering more than 6 months of data may time out in the browser. Use the 'Generate as Background Job' option, which emails a download link once the report is ready.",
+      "category": "performance",
+      "metadata": {
+        "product_area": "web_app",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-024",
+      "title": "Adding a secondary billing contact",
+      "content": "Enterprise accounts can add a secondary billing contact under Billing > Contacts. This contact receives invoice copies and payment failure notifications but cannot modify payment methods.",
+      "category": "billing",
+      "metadata": {
+        "product_area": "billing",
+        "priority": "low"
+      }
+    },
+    {
+      "id": "TCK-025",
+      "title": "First-time API integration walkthrough",
+      "content": "New developers should start with the Quickstart guide: generate an API key, install the SDK, and make a test call to the /ping endpoint. A working response confirms the integration is correctly authenticated.",
+      "category": "onboarding",
+      "metadata": {
+        "product_area": "developer_platform",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-026",
+      "title": "Upgrading from Free to Pro or Enterprise plan",
+      "content": "Upgrades from the Free plan to Pro or Enterprise take effect immediately upon payment confirmation, unlike downgrades which wait for the next billing cycle. Newly unlocked features such as SSO, higher API limits, and priority support become available right away, and the customer is billed a prorated amount for the remainder of the current billing period.",
+      "category": "billing",
+      "metadata": {
+        "product_area": "billing",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-027",
+      "title": "Changing your account's billing email address",
+      "content": "Users can update the billing email under Billing > Payment Settings > Billing Contact. Invoices and payment failure notices will be sent to the new address starting from the next billing cycle; the current cycle's invoice is still sent to the previous address.",
+      "category": "billing",
+      "metadata": {
+        "product_area": "billing",
+        "priority": "low"
+      }
+    },
+    {
+      "id": "TCK-028",
+      "title": "Rate limit differences across Free, Pro, and Enterprise plans",
+      "content": "The Free plan allows 20 requests per minute, the Pro plan allows 100 requests per minute (matching the Standard tier), and the Enterprise plan allows 1000 requests per minute. All plans return a 429 error with a Retry-After header when the limit is exceeded.",
+      "category": "api",
+      "metadata": {
+        "product_area": "developer_platform",
+        "priority": "medium"
+      }
+    },
+    {
+      "id": "TCK-029",
+      "title": "Transferring account ownership",
+      "content": "Account ownership can be transferred to another team member under Team Settings > Transfer Ownership. The new owner must accept the transfer within 72 hours, after which the original owner is automatically demoted to admin rather than losing access entirely.",
+      "category": "account",
+      "metadata": {
+        "product_area": "account_management",
+        "priority": "high"
+      }
+    },
+    {
+      "id": "TCK-030",
+      "title": "Mobile app push notification settings",
+      "content": "Push notifications for the Dandes Cloud mobile app can be customized under App Settings > Notifications, with separate toggles for billing alerts, security alerts, and product updates. Security alerts cannot be fully disabled, only reduced to critical-only notifications.",
+      "category": "performance",
+      "metadata": {
+        "product_area": "mobile_app",
+        "priority": "low"
+      }
+    }
+  ]
+}

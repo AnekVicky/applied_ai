@@ -1,0 +1,43 @@
+import json 
+import pandas as pd
+from langchain_core.documents import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+
+#load the data
+
+def load_tickets(file_path = './enterprise-support-copilot/data/support_tickets.json'):
+    with open(file_path, 'r') as f:
+        data = json.load(f)
+    return data['support_tickets']
+
+def convert_to_pd():
+    tickets = load_tickets()
+    return pd.DataFrame(tickets)
+
+
+## Step 2 : load tickts as langchain documents 
+def load_as_documents(path = './enterprise-support-copilot/data/support_tickets.json'):
+    tickets = load_tickets(path)
+    documents = []
+    for ticket in tickets:
+        doc = Document(
+                page_content = ticket['content'],
+                metadata = {
+                    'source_id': ticket['id'],
+                    'title': ticket['title'],
+                    'category': ticket['category'],
+                    'priority': ticket['metadata']['priority'],
+                    'product_area': ticket['metadata']['product_area']
+                }
+
+        )
+        documents.append(doc)
+    return documents
+
+documents = load_tickets()
+
+##   pandas 
+#df = convert_to_pd()
+#print(df.head(5))
+
