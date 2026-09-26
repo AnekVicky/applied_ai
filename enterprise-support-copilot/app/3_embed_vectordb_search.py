@@ -28,7 +28,7 @@ def load_as_documents(file_path):
         doc = Document(
                 page_content = ticket['content'],
                 metadata = {
-                    'source_id': ticket['id'],
+                    'ticket_id': ticket['id'],
                     'title': ticket['title'],
                     'category': ticket['category'],
                     'priority': ticket['metadata']['priority'],
@@ -98,7 +98,12 @@ vector_store = Chroma.from_documents(
 
 print(f'item indexed : {vector_store._collection.count()}')
 
-results = vector_store.similarity_search('How do I reset my password ?',k=3)
-for result in results:
-    print(f'chunk -> {result.metadata['chunk_id']} , source id -> {result.metadata['source_id']} , content -> {result.page_content}')
+TOP_K = 3
+results = vector_store.similarity_search('How do I reset my password ?',k=TOP_K)
+print(f'***** retrieved TOP_K = {TOP_K} chunks *****')
 
+for result in results:
+    print(f'chunk_id -> {result.metadata['chunk_id']} , ticket_id -> {result.metadata['source_id']} , content -> {result.page_content}')
+
+#
+#git push git@github.com:AnekVicky/applied_ai.git main
