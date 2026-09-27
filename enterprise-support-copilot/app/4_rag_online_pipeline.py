@@ -28,8 +28,8 @@ def format_docs(retrieved_docs):
     for doc in retrieved_docs:
        ticket_id = doc.metadata['ticket_id']
        title = doc.metadata['title']
-       my_chunks = f'[Source : {ticket_id}-{title}]\n{doc.page_content} '
-       parts.append(my_chunks)
+       my_chunk = f'[Source : {ticket_id}-{title}]\n{doc.page_content} '
+       parts.append(my_chunk)
 
     return "\n\n".join(parts)
 
