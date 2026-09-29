@@ -1,9 +1,18 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="OA6C073b2mLcLqQKfiUp">
-    <mxGraphModel>
+    <mxGraphModel dx="1065" dy="648" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="NwU5FiFV67B32lWfzfBn-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="embedding_model&lt;br&gt;text-embedding-3-small" vertex="1">
+          <mxGeometry height="60" width="120" x="410" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="NwU5FiFV67B32lWfzfBn-2" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="vectorestore&lt;br&gt;ChromaDB" vertex="1">
+          <mxGeometry height="120" width="90" x="660" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="NwU5FiFV67B32lWfzfBn-3" parent="1" style="points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.user;rotation=-91;direction=south;" value="" vertex="1">
+          <mxGeometry height="60" width="60" x="400" y="310" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
