@@ -1,11 +1,17 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="fm9V1EXoeU2vbieiVPYG">
-    <mxGraphModel dx="1222" dy="730" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1065" dy="648" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="mZ8gHRjJ8z0M8A-OD3jU-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="60" width="120" x="370" y="90" as="geometry" />
+        <mxCell id="mZ8gHRjJ8z0M8A-OD3jU-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="embedding_model" vertex="1">
+          <mxGeometry height="60" width="120" x="380" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="hfq9N8RfKst_KmG0I4g3-1" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="vectorestore" vertex="1">
+          <mxGeometry height="90" width="90" x="570" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="hfq9N8RfKst_KmG0I4g3-2" parent="1" style="points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.user;" value="" vertex="1">
+          <mxGeometry height="60" width="60" x="50" y="145" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
