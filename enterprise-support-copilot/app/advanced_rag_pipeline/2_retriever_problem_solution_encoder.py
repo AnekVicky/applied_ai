@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
+from sentence_transformers import CrossEncoder
 
 
 load_dotenv()
@@ -19,6 +20,10 @@ vectorstore = Chroma(
     embedding_function = embeddings,
     collection_name = 'support_tickets'
 )
+#cross_encoder = CrossEncoder('cross_encoder/ms-macro-MiniLM-L-6-v2')
+cross_encoder = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+print('++++++++   cross_encoder model loaded +++++++++++++++++++++')
+
 def get_questions():
     return [
         "What is Dandes Cloud's refund policy for Enterprise cancellations?",
@@ -40,11 +45,19 @@ def run_pipeline():
     expected_top_sources = expected_top_source()
 
     for question in questions:
-        retrieved_chunked_results = vectorstore.similarity_search_with_score(question, k = TOP_K)
+        retrieved_chunked_results = vectorstore.similarity_search(question, k = RETRIEVED_K)
         print('='*30)
         print(f'Question : {question}')
         print('='*30)
-        for rank,(retrieved_chunk,score) in enumerate(retrieved_chunked_results,start = 1):
+
+        # Use Encoder for reranking  NOTE here : vectorstore.similarity_search or else you will have issues in result.page_content
+        question_result_pair = [(question,result.page_content) for result in retrieved_chunked_results]
+        #print(f'question_result_pair : {question_result_pair}')
+        scores = cross_encoder.predict(question_result_pair)
+
+        ranked = sorted(zip(retrieved_chunked_results,scores),key = lambda x : x[1] ,reverse=True)
+
+        for rank,(retrieved_chunk,score) in enumerate(ranked[:TOP_K],start = 1):
             marker = '<---- Expected ' if retrieved_chunk.metadata['ticket_id'] == expected_top_sources[question] else ''
             print(f'rank : {rank} ,score : {score} , retrieved_chunk source : {retrieved_chunk.metadata['ticket_id']} {marker}')
 
