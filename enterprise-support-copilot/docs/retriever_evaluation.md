@@ -1,3 +1,6 @@
+  1. FLow 
+===========================================
+
                  RAG RETRIEVER EVALUATION
                  ────────────────────────
 
@@ -51,3 +54,24 @@
                 │ Quality Report  │
                 └─────────────────┘
 
+
+
+
+2. Understanding TP,FP,TN,FN
+===========================================
+
+Easy way to remember
+
+Think of "positive" = answer should be given.
+
+                       LLM Decision
+                 Answer       Refuse
+              ┌──────────┬──────────┐
+Should       │           │           │
+Answer       │    TP     │    FN     │
+              │           │           │
+              ├──────────┼──────────┤
+Should       │           │           │
+Refuse       │    FP     │    TN     │
+              │           │           │
+              └──────────┴──────────┘

@@ -71,14 +71,15 @@ def refusal_check(generated_answer,context,question_set):
     is_refused_by_llm = "I don't know".lower() in generated_answer.lower()
     should_refuse = len(question_set['expected_sources']) == 0 
 
-    if is_refused_by_llm and should_refuse:
-        return 'correct refusal'
+    # P(refusal)
+    if is_refused_by_llm and should_refuse:         
+        return 'correct refusal'                       #  True positive      
     elif is_refused_by_llm and not should_refuse:
-        return 'llm refusal but it should not'
+        return 'llm refusal but it should not'         #  False +
     elif not is_refused_by_llm and should_refuse:
-        return 'llm hallucinate'
+        return 'llm hallucinate'                       #  False -
     elif not is_refused_by_llm and not should_refuse:
-        return 'correctly answered'
+        return 'correctly answered'                    #  True negative
 
     
 
@@ -132,6 +133,19 @@ TEST_SETS = [
 
 #RUN
 run_pipeline_evaluation(TEST_SETS)  
+"""
+                    LLM Decision
+                 Answer       Refuse
+              ┌──────────┬──────────┐
+Should       │           │           │
+Answer       │    TP     │    FN     │
+              │           │           │
+              ├──────────┼──────────┤
+Should       │           │           │
+Refuse       │    FP     │    TN     │
+              │           │           │
+              └──────────┴──────────┘
+"""
 
 
     
