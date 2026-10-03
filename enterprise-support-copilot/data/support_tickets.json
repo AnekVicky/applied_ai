@@ -23,7 +23,7 @@
     {
       "id": "TCK-003",
       "title": "API rate limit exceeded error (429)",
-      "content": "The Dandes Cloud API allows 100 requests per minute on the Standard plan and 1000 requests per minute on the Enterprise plan. Exceeding this returns a 429 error. Implement exponential backoff to handle this.",
+      "content": "The AnekVicky Cloud API allows 100 requests per minute on the Standard plan and 1000 requests per minute on the Enterprise plan. Exceeding this returns a 429 error. Implement exponential backoff to handle this.",
       "category": "api",
       "metadata": {
         "product_area": "developer_platform",
@@ -293,7 +293,7 @@
     {
       "id": "TCK-030",
       "title": "Mobile app push notification settings",
-      "content": "Push notifications for the Dandes Cloud mobile app can be customized under App Settings > Notifications, with separate toggles for billing alerts, security alerts, and product updates. Security alerts cannot be fully disabled, only reduced to critical-only notifications.",
+      "content": "Push notifications for the AnekVicky Cloud mobile app can be customized under App Settings > Notifications, with separate toggles for billing alerts, security alerts, and product updates. Security alerts cannot be fully disabled, only reduced to critical-only notifications.",
       "category": "performance",
       "metadata": {
         "product_area": "mobile_app",

@@ -110,7 +110,7 @@ def run_pipeline_evaluation(TEST_SETS):
 #Run the eval
 TEST_SETS = [
 {
-"question": "What is Dandes Cloud's refund policy for Enterprise cancellations?",
+"question": "What is AnekVicky Cloud's refund policy for Enterprise cancellations?",
 "expected_sources": ["TCK-001"]
 },
 {

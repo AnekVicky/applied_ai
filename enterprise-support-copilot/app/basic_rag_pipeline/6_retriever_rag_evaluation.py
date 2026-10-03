@@ -43,7 +43,7 @@ context : {context}
 TOP_K = 3
 TEST_SET = [
 {
-"question": "What is Dandes Cloud's refund policy for Enterprise cancellations?",
+"question": "What is AnekVicky Cloud's refund policy for Enterprise cancellations?",
 "expected_sources": ["TCK-001"]
 },
 {
