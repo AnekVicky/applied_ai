@@ -22,7 +22,7 @@ vectorstore = Chroma(
 )
 #cross_encoder = CrossEncoder('cross_encoder/ms-macro-MiniLM-L-6-v2')
 cross_encoder = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
-print('++++++++   cross_encoder model loaded +++++++++++++++++++++')
+print('+++++++++++++++++++  cross_encoder model loaded +++++++++++++++++++++')
 
 def get_questions():
     return [
@@ -50,10 +50,13 @@ def run_pipeline():
         print(f'Question : {question}')
         print('='*30)
 
-        # Use Encoder for reranking  NOTE here : vectorstore.similarity_search or else you will have issues in result.page_content
+        # Use Encoder for reranking  
+        # Dont do vectorstore.similarity_search_by_score
+        # NOTE here : vectorstore.similarity_search or else you will have issues in result.page_content
         question_result_pair = [(question,result.page_content) for result in retrieved_chunked_results]
         #print(f'question_result_pair : {question_result_pair}')
         scores = cross_encoder.predict(question_result_pair)
+        print(f'cross encoder scores : {scores}')
 
         ranked = sorted(zip(retrieved_chunked_results,scores),key = lambda x : x[1] ,reverse=True)
 
